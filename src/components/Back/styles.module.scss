@@ -1,0 +1,13 @@
+@import "../../styles/base.scss";
+
+button {
+  width: fit-content;
+  @include theme-colors($dark-theme: false);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.20);
+  cursor: pointer;
+}

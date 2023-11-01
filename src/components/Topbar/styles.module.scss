@@ -1,0 +1,68 @@
+@import "../../styles/base.scss";
+
+.topbar {
+  @include theme-colors($dark-theme: false);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5rem;
+  box-shadow: 0px 0px 5px 0px $light_dark_gray;
+
+  .navigation {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    gap: 2rem;
+    font-weight: $weight_bold;
+
+    .title {
+      cursor: pointer;
+      padding: 1rem 0.5rem;
+      font-weight: $weight_bold;
+    }
+
+    a {
+      @include theme-colors($dark-theme: false);
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .items:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .toggle {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: $small) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .navigation {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.dark {
+  @include theme-colors($dark-theme: true);
+
+  .navigation {
+    a {
+      @include theme-colors($dark-theme: true);
+    }
+  }
+}
